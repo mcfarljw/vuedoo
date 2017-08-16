@@ -11,6 +11,11 @@
   "bin": {
     "vuedoo": "./bin/vuedoo.js"
   },
+  "scripts": {
+    "build": "node ./bin/vuedoo.js build",
+    "monitor": "node ./bin/vuedoo.js monitor",
+    "start": "node ./bin/vuedoo.js"
+  },
   "dependencies": {
     "babel-core": "6.25.x",
     "babel-loader": "7.1.x",

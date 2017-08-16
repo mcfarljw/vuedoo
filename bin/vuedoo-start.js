@@ -2,7 +2,7 @@ const filesystem = require('fs-extra')
 const path = require('path')
 const webpack = require('webpack')
 const webpackConfig = require('../webpack.config-prod.js')
-const server = require('../src/server.js')
+const server = require('../lib/server.js')
 
 filesystem.emptyDirSync(path.resolve(process.env.VUEDOO_PROJECT_DIRECTORY, './dist'))
 

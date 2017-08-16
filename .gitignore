@@ -1,4 +1,7 @@
 # Directories
+.build/
+.idea/
+.vscode/
 cordova/
 dist/
 node_modules/

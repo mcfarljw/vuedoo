@@ -4,7 +4,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarWebpackPlugin = require('progress-bar-webpack-plugin')
 const config =  require(process.env.VUEDOO_PROJECT_DIRECTORY + '/vuedoo.config.js')
-const helpers = require('./src/helpers.js')
+const helpers = require('./lib/helpers.js')
 
 module.exports = {
 
@@ -83,6 +83,7 @@ module.exports = {
   resolve: {
     alias: {
       '~': path.resolve(process.env.VUEDOO_PROJECT_DIRECTORY),
+      'components': path.resolve(process.env.VUEDOO_ROOT_DIRECTORY, 'components'),
       'vue$': 'vue/dist/vue.esm.js'
     },
     extensions: ['.js', '.vue'],

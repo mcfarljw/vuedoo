@@ -1,1 +1,1 @@
-require('../src/server.js').start({dev: true})
+require('../lib/server.js').start({dev: true})
