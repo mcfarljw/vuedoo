@@ -1,0 +1,7 @@
+# Directories
+cordova/
+dist/
+node_modules/
+
+# Files
+*.log
