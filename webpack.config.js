@@ -23,11 +23,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
-        options: {
-          babelrc: false,
-          presets: [require.resolve('babel-preset-vue-app')]
-        }
+        exclude: /node_modules/
       },
       {
         test: /\.pug$/,
@@ -43,8 +39,26 @@ module.exports = {
             'scss': 'vue-style-loader!css-loader!sass-loader'
           }
         }
+      },
+      {
+        test: /\.(gif|ico|jpe?g|png|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'images/[name].[hash:7].[ext]'
+        }
+      },
+      {
+        test: /\.(eot|otf|ttf|woff2?)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[name].[hash:7].[ext]'
+        }
       }
     ]
+  },
+
+  performance: {
+    hints: false
   },
 
   plugins: [
