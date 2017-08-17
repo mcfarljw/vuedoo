@@ -3,18 +3,18 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarWebpackPlugin = require('progress-bar-webpack-plugin')
-const config =  require(process.env.VUEDOO_PROJECT_DIRECTORY + '/vuedoo.config.js')
+const config = require('./lib/config.js')
 const helpers = require('./lib/helpers.js')
 
 module.exports = {
 
   entry: {
-    main: [path.resolve(process.env.VUEDOO_PROJECT_DIRECTORY, config.client.entry)]
+    main: helpers.resolveProjectPath(config.client.entry)
   },
 
   output: {
     filename: '[name].js',
-    path: path.resolve(process.env.VUEDOO_PROJECT_DIRECTORY, config.client.output),
+    path: helpers.resolveProjectPath(config.client.output),
     publicPath: config.client.base
   },
 
@@ -73,7 +73,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.resolve(process.env.VUEDOO_PROJECT_DIRECTORY, config.client.html)
+      template: helpers.resolveProjectPath(config.client.html)
     }),
     new ProgressBarWebpackPlugin({
       format: chalk.blue('Building') + ' [:percent :bar]'
@@ -82,21 +82,20 @@ module.exports = {
 
   resolve: {
     alias: {
-      '~': path.resolve(process.env.VUEDOO_PROJECT_DIRECTORY),
-      'components': path.resolve(process.env.VUEDOO_ROOT_DIRECTORY, 'components'),
+      '~': helpers.resolveProjectPath(),
       'vue$': 'vue/dist/vue.esm.js'
     },
     extensions: ['.js', '.vue'],
     modules: [
-      path.resolve(process.env.VUEDOO_ROOT_DIRECTORY, './node_modules'),
-      path.resolve(process.env.VUEDOO_PROJECT_DIRECTORY, './node_modules')
+      helpers.resolveLibraryPath('node_modules'),
+      helpers.resolveProjectPath('node_modules')
     ]
   },
 
   resolveLoader: {
     modules: [
-      path.resolve(process.env.VUEDOO_ROOT_DIRECTORY, './node_modules'),
-      path.resolve(process.env.VUEDOO_PROJECT_DIRECTORY, './node_modules')
+      helpers.resolveLibraryPath('node_modules'),
+      helpers.resolveProjectPath('node_modules')
     ]
   }
 

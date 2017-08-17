@@ -1,10 +1,15 @@
+#! /usr/bin/env node
+
 const filesystem = require('fs-extra')
 const path = require('path')
 const webpack = require('webpack')
 const webpackConfig = require('../webpack.config-prod.js')
+const config = require('../lib/config.js')
+const helpers = require('../lib/helpers.js')
 const server = require('../lib/server.js')
 
-filesystem.emptyDirSync(path.resolve(process.env.VUEDOO_PROJECT_DIRECTORY, './dist'))
+
+filesystem.emptyDirSync(helpers.resolveProjectPath(config.client.output))
 
 webpack(webpackConfig, (error, result) => {
   if (error) throw error
