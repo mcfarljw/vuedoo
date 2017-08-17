@@ -17,7 +17,7 @@
     "start": "node ./bin/vuedoo.js"
   },
   "dependencies": {
-    "babel-core": "6.25.x",
+    "babel-core": "6.26.x",
     "babel-loader": "7.1.x",
     "babel-preset-vue-app": "1.2.x",
     "chalk": "2.1.x",
