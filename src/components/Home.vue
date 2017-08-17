@@ -1,22 +1,25 @@
 <style lang="scss" scoped>
-  .home {
+  .component {
     text-align: center;
+  }
+
+  .logo {
+    max-width: 300px;
+    width: 100%;
   }
 </style>
 
 <template lang="pug">
-  .home
+  .component
     h1 Vuedoo Documentation
-    material-button
+    p Vue with a bit of dark magic.
+    img.logo(src="../assets/vuedoo.png", alt="")
 </template>
 
 <script>
-  import MaterialButton from '../../components/MaterialButton.vue'
-
   export default {
     mounted () {
       document.title = 'Home | Vuedoo'
-    },
-    components: { MaterialButton }
+    }
   }
 </script>
