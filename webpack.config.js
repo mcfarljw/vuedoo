@@ -2,7 +2,6 @@ const chalk = require('chalk')
 const lodash = require('lodash')
 const path = require('path')
 const webpack = require('webpack')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarWebpackPlugin = require('progress-bar-webpack-plugin')
 const config = require('./lib/config.js')
@@ -62,9 +61,6 @@ let webpackConfig = {
       name: 'manifest',
       chunks: ['vendor']
     }),
-    new CopyWebpackPlugin([
-      {from: helpers.resolveProjectPath('static')},
-    ]),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: helpers.resolveProjectPath(config.client.html)
