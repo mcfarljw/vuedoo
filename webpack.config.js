@@ -1,13 +1,14 @@
 const chalk = require('chalk')
+const lodash = require('lodash')
 const path = require('path')
 const webpack = require('webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarWebpackPlugin = require('progress-bar-webpack-plugin')
 const config = require('./lib/config.js')
 const helpers = require('./lib/helpers.js')
 
-module.exports = {
-
+let webpackConfig = {
   entry: {
     main: helpers.resolveProjectPath(config.client.entry)
   },
@@ -26,19 +27,9 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.pug$/,
-        exclude: /node_modules/,
-        loader: 'pug-loader'
-      },
-      {
         test: /\.vue$/,
         loader: 'vue-loader',
-        exclude: /node_modules/,
-        options: {
-          loaders: {
-            'scss': 'vue-style-loader!css-loader!sass-loader'
-          }
-        }
+        exclude: /node_modules/
       },
       {
         test: /\.(gif|ico|jpe?g|png|svg)$/,
@@ -71,6 +62,9 @@ module.exports = {
       name: 'manifest',
       chunks: ['vendor']
     }),
+    new CopyWebpackPlugin([
+      {from: helpers.resolveProjectPath('static')},
+    ]),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: helpers.resolveProjectPath(config.client.html)
@@ -98,5 +92,15 @@ module.exports = {
       helpers.resolveProjectPath('node_modules')
     ]
   }
-
 }
+
+if (lodash.intersection(config.client.plugins, ['jade', 'pug']).length > 0) {
+  webpackConfig = require('./lib/plugins/pug.js')(webpackConfig)
+}
+
+
+if (lodash.intersection(config.client.plugins, ['sass', 'scss']).length > 0) {
+  webpackConfig = require('./lib/plugins/sass.js')(webpackConfig)
+}
+
+module.exports = webpackConfig

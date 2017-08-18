@@ -13,7 +13,7 @@
   .component
     h1 Vuedoo Documentation
     p Vue with a bit of dark magic.
-    img.logo(src="../assets/vuedoo.png", alt="")
+    img.logo(src="../assets/logo.png", alt="")
 </template>
 
 <script>
