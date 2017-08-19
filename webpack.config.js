@@ -89,6 +89,10 @@ let webpackConfig = {
   }
 }
 
+if (lodash.intersection(config.client.plugins, ['coffee']).length > 0) {
+  webpackConfig = require('./lib/plugins/coffee.js')(webpackConfig)
+}
+
 if (lodash.intersection(config.client.plugins, ['css']).length > 0) {
   webpackConfig = require('./lib/plugins/css.js')(webpackConfig)
 }
