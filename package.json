@@ -1,7 +1,7 @@
 {
   "name": "vuedoo",
   "description": "Vue with a bit of dark magic.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Joshua McFarland <mcfarljw@gmail.com>",
   "license": "MIT",
   "repository": {
