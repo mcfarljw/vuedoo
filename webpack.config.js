@@ -74,7 +74,7 @@ let webpackConfig = {
       '~': helpers.resolveProjectPath(),
       'vue$': 'vue/dist/vue.esm.js'
     },
-    extensions: ['.js', '.vue'],
+    extensions: ['.js', '.json', '.vue'],
     modules: [
       helpers.resolveLibraryPath('node_modules'),
       helpers.resolveProjectPath('node_modules')
