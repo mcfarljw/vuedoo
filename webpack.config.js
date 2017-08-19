@@ -97,6 +97,10 @@ if (lodash.intersection(config.client.plugins, ['css']).length > 0) {
   webpackConfig = require('./lib/plugins/css.js')(webpackConfig)
 }
 
+if (lodash.intersection(config.client.plugins, ['less']).length > 0) {
+  webpackConfig = require('./lib/plugins/less.js')(webpackConfig)
+}
+
 if (lodash.intersection(config.client.plugins, ['jade', 'pug']).length > 0) {
   webpackConfig = require('./lib/plugins/pug.js')(webpackConfig)
 }

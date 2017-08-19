@@ -32,6 +32,8 @@
     "helmet": "3.8.x",
     "html-webpack-plugin": "2.30.x",
     "http-proxy-middleware": "0.17.x",
+    "less": "2.7.x",
+    "less-loader": "4.0.x",
     "lodash": "4.17.x",
     "minimist": "1.2.x",
     "node-sass": "4.5.x",
