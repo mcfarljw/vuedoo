@@ -27,8 +27,7 @@ let webpackConfig = {
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        exclude: /node_modules/
+        loader: 'vue-loader'
       },
       {
         test: /\.(gif|ico|jpe?g|png|svg)$/,
@@ -90,10 +89,13 @@ let webpackConfig = {
   }
 }
 
+if (lodash.intersection(config.client.plugins, ['css']).length > 0) {
+  webpackConfig = require('./lib/plugins/css.js')(webpackConfig)
+}
+
 if (lodash.intersection(config.client.plugins, ['jade', 'pug']).length > 0) {
   webpackConfig = require('./lib/plugins/pug.js')(webpackConfig)
 }
-
 
 if (lodash.intersection(config.client.plugins, ['sass', 'scss']).length > 0) {
   webpackConfig = require('./lib/plugins/sass.js')(webpackConfig)
