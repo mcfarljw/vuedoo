@@ -101,4 +101,8 @@ if (lodash.intersection(config.client.plugins, ['sass', 'scss']).length > 0) {
   webpackConfig = require('./lib/plugins/sass.js')(webpackConfig)
 }
 
+if (lodash.intersection(config.client.plugins, ['styl', 'stylus']).length > 0) {
+  webpackConfig = require('./lib/plugins/stylus.js')(webpackConfig)
+}
+
 module.exports = webpackConfig

@@ -39,6 +39,8 @@
     "pug-loader": "2.3.x",
     "sass-loader": "6.0.x",
     "style-loader": "0.18.x",
+    "stylus": "0.54.x",
+    "stylus-loader": "3.0.x",
     "url-loader": "0.5.x",
     "vue": "2.4.x",
     "vue-loader": "13.0.x",
