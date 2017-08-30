@@ -52,7 +52,7 @@
     "vue-router": "2.7.x",
     "vue-style-loader": "3.0.x",
     "vue-template-compiler": "2.4.x",
-    "vuex": "2.3.x",
+    "vuex": "2.4.x",
     "vuex-router-sync": "4.2.x",
     "webpack": "3.5.x",
     "webpack-dev-middleware": "1.12.x",
