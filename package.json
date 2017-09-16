@@ -55,7 +55,7 @@
     "vue-template-compiler": "2.4.x",
     "vuex": "2.4.x",
     "vuex-router-sync": "4.3.x",
-    "webpack": "3.5.x",
+    "webpack": "3.6.x",
     "webpack-dev-middleware": "1.12.x",
     "webpack-hot-middleware": "2.19.x",
     "webpack-merge": "4.1.x"
