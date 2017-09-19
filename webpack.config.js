@@ -1,6 +1,5 @@
 const chalk = require('chalk')
 const lodash = require('lodash')
-const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarWebpackPlugin = require('progress-bar-webpack-plugin')
@@ -24,6 +23,14 @@ let webpackConfig = {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.js$/,
+        loader: 'string-replace-loader',
+        exclude: /node_modules/,
+        query: {
+          multiple: config.client.replace
+        }
       },
       {
         test: /\.vue$/,
