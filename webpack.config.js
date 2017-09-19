@@ -30,6 +30,14 @@ let webpackConfig = {
         loader: 'vue-loader'
       },
       {
+        test: /\.(mp3|ogg|webm)$/,
+        loader: 'file-loader',
+        exclude: /node_modules/,
+        options: {
+          name: 'audio/[name].[hash:7].[ext]'
+        }
+      },
+      {
         test: /\.(gif|ico|jpe?g|png|svg)$/,
         loader: 'file-loader',
         options: {
