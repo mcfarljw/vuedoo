@@ -10,15 +10,32 @@ vue init mcfarljw/vuedoo-starter
 
 ## Usage
 
+### package.json
+
 ```
 {
   "scripts": {
     "build": "vuedoo build",
+    "lint": "vuedoo lint",
     "monitor": "vuedoo monitor",
     "start": "vuedoo"
   },
   "dependencies": {
-    "vuedoo": "latest"
+    "vuedoo": "0.2.x"
   }
+}
+```
+
+### vuedoo.config.js
+
+```
+module.export = {
+  base: '/',
+  entry: 'src/main.js',
+  html: 'src/assets/index.html',
+  output: '.build',
+  plugins: [],
+  port: 5000,
+  replace: []
 }
 ```

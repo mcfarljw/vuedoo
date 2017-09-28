@@ -8,13 +8,13 @@ const helpers = require('./lib/helpers.js')
 
 let webpackConfig = {
   entry: {
-    main: helpers.resolveProjectPath(config.client.entry)
+    main: helpers.resolveProjectPath(config.entry)
   },
 
   output: {
     filename: '[name].js',
-    path: helpers.resolveProjectPath(config.client.output),
-    publicPath: config.client.base
+    path: helpers.resolveProjectPath(config.output),
+    publicPath: config.base
   },
 
   module: {
@@ -29,7 +29,7 @@ let webpackConfig = {
         loader: 'string-replace-loader',
         exclude: /node_modules/,
         query: {
-          multiple: config.client.replace
+          multiple: config.replace
         }
       },
       {
@@ -77,7 +77,7 @@ let webpackConfig = {
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: helpers.resolveProjectPath(config.client.html)
+      template: helpers.resolveProjectPath(config.html)
     }),
     new ProgressBarWebpackPlugin({
       format: chalk.blue('Building') + ' [:percent :bar]'
@@ -104,27 +104,27 @@ let webpackConfig = {
   }
 }
 
-if (lodash.intersection(config.client.plugins, ['coffee']).length > 0) {
+if (lodash.intersection(config.plugins, ['coffee']).length > 0) {
   webpackConfig = require('./lib/plugins/coffee.js')(webpackConfig)
 }
 
-if (lodash.intersection(config.client.plugins, ['css']).length > 0) {
+if (lodash.intersection(config.plugins, ['css']).length > 0) {
   webpackConfig = require('./lib/plugins/css.js')(webpackConfig)
 }
 
-if (lodash.intersection(config.client.plugins, ['less']).length > 0) {
+if (lodash.intersection(config.plugins, ['less']).length > 0) {
   webpackConfig = require('./lib/plugins/less.js')(webpackConfig)
 }
 
-if (lodash.intersection(config.client.plugins, ['jade', 'pug']).length > 0) {
+if (lodash.intersection(config.plugins, ['jade', 'pug']).length > 0) {
   webpackConfig = require('./lib/plugins/pug.js')(webpackConfig)
 }
 
-if (lodash.intersection(config.client.plugins, ['sass', 'scss']).length > 0) {
+if (lodash.intersection(config.plugins, ['sass', 'scss']).length > 0) {
   webpackConfig = require('./lib/plugins/sass.js')(webpackConfig)
 }
 
-if (lodash.intersection(config.client.plugins, ['styl', 'stylus']).length > 0) {
+if (lodash.intersection(config.plugins, ['styl', 'stylus']).length > 0) {
   webpackConfig = require('./lib/plugins/stylus.js')(webpackConfig)
 }
 

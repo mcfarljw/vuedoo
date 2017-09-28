@@ -7,7 +7,7 @@ const config = require('../lib/config.js')
 const helpers = require('../lib/helpers.js')
 const server = require('../lib/server.js')
 
-filesystem.emptyDirSync(helpers.resolveProjectPath(config.client.output))
+filesystem.emptyDirSync(helpers.resolveProjectPath(config.output))
 
 webpack(webpackConfig, (error, result) => {
   if (error) throw error
