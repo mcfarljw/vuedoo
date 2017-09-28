@@ -1,6 +1,9 @@
 const project = require('./package.json')
 
 module.exports = {
+  alias: {
+    '~data': 'src/data'
+  },
   html: 'src/assets/index.pug',
   plugins: ['pug', 'sass'],
   replace: [

@@ -7,8 +7,10 @@
 </style>
 
 <template lang="pug">
-  #app
-    router-view
+  v-app(light)
+    main
+      v-container(fluid)
+        router-view
 </template>
 
 <script>

@@ -85,10 +85,10 @@ let webpackConfig = {
   ],
 
   resolve: {
-    alias: {
+    alias: helpers.mergeAlias({
       '~': helpers.resolveProjectPath(),
       'vue$': 'vue/dist/vue.esm.js'
-    },
+    }, config.alias),
     extensions: ['.js', '.json', '.vue'],
     modules: [
       helpers.resolveLibraryPath('node_modules'),

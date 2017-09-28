@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VuexRouterSync from 'vuex-router-sync'
-import App from './App.vue'
-import router from './router.js'
-import store from './store.js'
+import App from '~/src/App.vue'
+import router from '~/src/router.js'
+import store from '~/src/store.js'
 
 VuexRouterSync.sync(store, router)
 

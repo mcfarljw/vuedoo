@@ -30,6 +30,7 @@ vue init mcfarljw/vuedoo-starter
 
 ```
 module.export = {
+  alias: {},
   base: '/',
   entry: 'src/main.js',
   html: 'src/assets/index.html',

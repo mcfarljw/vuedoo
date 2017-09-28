@@ -1,5 +1,5 @@
 <style lang="scss" scoped>
-  .component {
+  .page {
     text-align: center;
   }
 
@@ -10,7 +10,7 @@
 </style>
 
 <template lang="pug">
-  .component
+  .home.page
     h1 Vuedoo Documentation
     h3 Version {{ config.applicationVersion }}
     p Vue with a bit of dark magic.
@@ -19,10 +19,11 @@
 
 <script>
   import config from '~/src/config'
+  import languages from '~data/languages'
 
   export default {
     data () {
-      return { config }
+      return { config, languages }
     },
     mounted () {
       document.title = 'Home | Vuedoo'
