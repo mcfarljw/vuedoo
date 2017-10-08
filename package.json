@@ -32,6 +32,7 @@
     "eventsource-polyfill": "0.9.x",
     "express": "4.16.x",
     "file-loader": "1.1.x",
+    "friendly-errors-webpack-plugin": "1.6.x",
     "fs-extra": "4.0.x",
     "helmet": "3.8.x",
     "html-webpack-plugin": "2.30.x",

@@ -1,6 +1,7 @@
 const chalk = require('chalk')
 const lodash = require('lodash')
 const webpack = require('webpack')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarWebpackPlugin = require('progress-bar-webpack-plugin')
 const config = require('./lib/config.js')
@@ -80,7 +81,13 @@ let webpackConfig = {
       template: helpers.resolveProjectPath(config.html)
     }),
     new ProgressBarWebpackPlugin({
-      format: chalk.blue('Building') + ' [:percent :bar]'
+      format: chalk.blue('Building') + ' [:percent :bar]',
+      summary: false
+    }),
+    new FriendlyErrorsWebpackPlugin({
+      compilationSuccessInfo: {
+        messages: ['URL: http://localhost:' + config.port]
+      }
     })
   ],
 
