@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import VuexRouterSync from 'vuex-router-sync'
 import App from '~/src/App.vue'
-import router from '~/src/router.js'
-import store from '~/src/store.js'
+import router from '~/src/router'
+import store from '~/src/store'
+import { isCordova } from '~/src/utils'
 
 VuexRouterSync.sync(store, router)
 
@@ -17,7 +18,7 @@ function start () {
   app.$mount('#app')
 }
 
-if (window.cordova !== undefined) {
+if (isCordova()) {
   document.addEventListener('deviceready', start, false)
 } else {
   document.addEventListener('DOMContentLoaded', start, false)

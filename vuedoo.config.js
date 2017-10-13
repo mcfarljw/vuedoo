@@ -2,9 +2,12 @@ const project = require('./package.json')
 
 module.exports = {
   alias: {
-    '~data': 'src/data'
+    '~data': 'res/data'
   },
-  html: 'src/assets/index.pug',
+  html: [
+    {filename: 'index.html', template: 'src/assets/index.pug'},
+    {filename: 'cordova.html', template: 'src/assets/cordova.pug'}
+  ],
   plugins: ['pug', 'sass'],
   replace: [
     {search: '{!application-name!}', replace: project.name, flags: 'g'},
