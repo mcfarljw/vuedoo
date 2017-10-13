@@ -2,10 +2,10 @@
 
 const filesystem = require('fs-extra')
 const webpack = require('webpack')
-const webpackConfig = require('../webpack.config-prod.js')
-const config = require('../lib/config.js')
-const helpers = require('../lib/helpers.js')
-const server = require('../lib/server.js')
+const webpackConfig = require('../webpack.config-prod')
+const config = require('../lib/config')
+const helpers = require('../lib/helpers')
+const server = require('../lib/server')
 
 filesystem.emptyDirSync(helpers.resolveProjectPath(config.output))
 

@@ -15,7 +15,7 @@ let webpackConfig = {
   output: {
     filename: '[name].js',
     path: helpers.resolveProjectPath(config.output),
-    publicPath: config.base
+    publicPath: config.cordova ? '' : config.base
   },
 
   module: {

@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const webpackMerge = require('webpack-merge')
-const webpackConfig = require('./webpack.config.js')
+const webpackConfig = require('./webpack.config')
+const config = require('./lib/config')
 
 module.exports = webpackMerge(webpackConfig, {
   devtool: '#source-map',
@@ -17,7 +18,7 @@ module.exports = webpackMerge(webpackConfig, {
       minimize: true
     }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
+      sourceMap: !config.cordova,
       compress: {
         warnings: false
       }
