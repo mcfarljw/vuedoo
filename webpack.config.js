@@ -76,10 +76,6 @@ let webpackConfig = {
       name: 'manifest',
       chunks: ['vendor']
     }),
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: helpers.resolveProjectPath(config.html)
-    }),
     new ProgressBarWebpackPlugin({
       format: chalk.blue('Building') + ' [:percent :bar]',
       summary: false
@@ -110,6 +106,13 @@ let webpackConfig = {
     ]
   }
 }
+
+lodash.forEach(config.html, entry => {
+  webpackConfig.plugins.push(new HtmlWebpackPlugin({
+    filename: entry.filename,
+    template: helpers.resolveProjectPath(entry.template)
+  }))
+})
 
 if (lodash.intersection(config.plugins, ['coffee']).length > 0) {
   webpackConfig = require('./lib/plugins/coffee.js')(webpackConfig)

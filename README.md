@@ -33,10 +33,15 @@ module.export = {
   alias: {},
   base: '/',
   entry: 'src/main.js',
-  html: 'src/assets/index.html',
+  html: [
+    {filename: 'index.html', template: 'src/assets/index.html'}
+  ],
   output: '.build',
   plugins: [],
   port: 5000,
-  replace: []
+  replace: [
+    {search: '{!application-name!}', replace: 'Vuedoo', flags: 'g'},
+    {search: '{!application-version!}', replace: '1.0.0', flags: 'g'}
+  ]
 }
 ```
