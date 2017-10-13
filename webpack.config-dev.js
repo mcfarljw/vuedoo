@@ -5,7 +5,7 @@ const webpackConfig = require('./webpack.config')
 const helpers = require('./lib/helpers')
 
 Object.keys(webpackConfig.entry).forEach(name => {
-  webpackConfig.entry[name] = [helpers.resolveLibraryPath('lib/reload.js')].concat(webpackConfig.entry[name])
+  webpackConfig.entry[name] = [helpers.resolveLibraryPath('lib/reload')].concat(webpackConfig.entry[name])
 })
 
 module.exports = webpackMerge(webpackConfig, {
