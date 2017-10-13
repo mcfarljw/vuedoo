@@ -9,9 +9,6 @@ switch (argv._[0]) {
   case 'build':
     require('./vuedoo-build.js')
     break
-  case 'lint':
-    require('./vuedoo-lint.js')
-    break
   case 'monitor':
     require('./vuedoo-monitor.js')
     break
