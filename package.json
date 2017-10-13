@@ -18,6 +18,8 @@
     "android": "node build/android",
     "android:copy": "node build/android-copy",
     "build": "node ./bin/vuedoo.js build",
+    "ios": "node build/ios",
+    "ios:copy": "node build/ios-copy",
     "lint": "eslint --fix --ext js,vue bin/** lib/** src/**",
     "monitor": "node ./bin/vuedoo.js monitor",
     "setup": "node build/setup",
