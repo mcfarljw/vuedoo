@@ -21,7 +21,7 @@ vue init mcfarljw/vuedoo-starter
     "start": "vuedoo"
   },
   "dependencies": {
-    "vuedoo": "0.2.x"
+    "vuedoo": "0.3.x"
   }
 }
 ```
