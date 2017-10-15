@@ -22,6 +22,7 @@
     "ios:copy": "node build/ios-copy",
     "lint": "eslint --fix --ext js,vue bin/** lib/** src/**",
     "monitor": "node ./bin/vuedoo.js monitor",
+    "precommit": "npm run lint",
     "setup": "node build/setup",
     "start": "node ./bin/vuedoo.js"
   },
@@ -40,7 +41,7 @@
     "file-loader": "1.1.x",
     "friendly-errors-webpack-plugin": "1.6.x",
     "fs-extra": "4.0.x",
-    "helmet": "3.8.x",
+    "helmet": "3.9.x",
     "html-webpack-plugin": "2.30.x",
     "less": "2.7.x",
     "less-loader": "4.0.x",
@@ -71,15 +72,16 @@
   "devDependencies": {
     "babel-eslint": "8.0.x",
     "cordova": "7.1.x",
-    "eslint": "4.8.x",
+    "eslint": "4.9.x",
     "eslint-config-standard": "10.2.x",
     "eslint-friendly-formatter": "3.0.x",
     "eslint-loader": "1.9.x",
     "eslint-plugin-html": "3.2.x",
     "eslint-plugin-import": "2.7.x",
     "eslint-plugin-node": "5.2.x",
-    "eslint-plugin-promise": "3.5.x",
+    "eslint-plugin-promise": "3.6.x",
     "eslint-plugin-standard": "3.0.x",
+    "husky": "0.14.x",
     "shelljs": "0.7.x"
   }
 }
