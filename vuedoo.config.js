@@ -12,5 +12,8 @@ module.exports = {
   replace: [
     {search: '{!application-name!}', replace: project.name, flags: 'g'},
     {search: '{!application-version!}', replace: project.version, flags: 'g'}
+  ],
+  static: [
+    {from: 'res/static', to: 'static'}
   ]
 }
