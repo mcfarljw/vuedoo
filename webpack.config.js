@@ -1,6 +1,7 @@
 const chalk = require('chalk')
 const lodash = require('lodash')
 const webpack = require('webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarWebpackPlugin = require('progress-bar-webpack-plugin')
@@ -76,6 +77,12 @@ let webpackConfig = {
       name: 'manifest',
       chunks: ['vendor']
     }),
+    new CopyWebpackPlugin(lodash.map(config.static, entry => {
+      return {
+        from: helpers.resolveProjectPath(entry.from),
+        to: entry.to
+      }
+    })),
     new ProgressBarWebpackPlugin({
       format: chalk.blue('Building') + ' [:percent :bar]',
       summary: false
