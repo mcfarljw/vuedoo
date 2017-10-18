@@ -12,7 +12,7 @@
     "id": "com.vuedoo.test"
   },
   "bin": {
-    "vuedoo": "./bin/vuedoo.js"
+    "vuedoo": "bin/vuedoo.js"
   },
   "scripts": {
     "android": "node build/android",
@@ -23,6 +23,7 @@
     "lint": "eslint --fix --ext js,vue bin/** lib/** src/**",
     "monitor": "node ./bin/vuedoo.js monitor",
     "precommit": "npm run lint",
+    "prepush": "npm run lint",
     "setup": "node build/setup",
     "start": "node ./bin/vuedoo.js"
   },
@@ -63,11 +64,12 @@
     "vue-router": "3.0.x",
     "vue-style-loader": "3.0.x",
     "vue-template-compiler": "2.5.x",
+    "vuetify": "0.16.x",
     "vuex": "3.0.x",
     "vuex-router-sync": "5.0.x",
-    "webpack": "3.7.x",
+    "webpack": "3.8.x",
     "webpack-dev-middleware": "1.12.x",
-    "webpack-hot-middleware": "2.19.x",
+    "webpack-hot-middleware": "2.20.x",
     "webpack-merge": "4.1.x"
   },
   "devDependencies": {

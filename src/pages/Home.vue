@@ -1,18 +1,17 @@
-<style lang="scss" scoped>
-  .page {
-    text-align: center;
-  }
+<style lang="stylus" scoped>
+  .page
+    padding-top: 10%
+    text-align: center
 
-  .logo {
-    max-width: 300px;
-    width: 100%;
-  }
+  .logo
+    max-width: 300px
+    width: 100%
 </style>
 
 <template lang="pug">
   .home.page
-    h1 Vuedoo Documentation
-    h3 Version {{ config.applicationVersion }}
+    h3 Vuedoo Documentation
+    h5 Version {{ config.applicationVersion }}
     p Vue with a bit of dark magic.
     img.logo(src="../assets/logo.png", alt="")
 </template>
