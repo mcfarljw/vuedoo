@@ -78,10 +78,9 @@ let webpackConfig = {
       chunks: ['vendor']
     }),
     new CopyWebpackPlugin(lodash.map(config.static, entry => {
-      return {
-        from: helpers.resolveProjectPath(entry.from),
-        to: entry.to
-      }
+      if (entry.from) entry.from = helpers.resolveProjectPath(entry.from)
+
+      return entry
     })),
     new ProgressBarWebpackPlugin({
       format: chalk.blue('Building') + ' [:percent :bar]',
