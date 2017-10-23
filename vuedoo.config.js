@@ -13,6 +13,7 @@ module.exports = {
     {search: '{!application-name!}', replace: project.name, flags: 'g'},
     {search: '{!application-version!}', replace: project.version, flags: 'g'}
   ],
+  port: 1987,
   static: [
     {from: 'res/static', to: 'static'}
   ]
