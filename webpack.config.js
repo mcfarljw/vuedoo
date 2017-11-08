@@ -35,6 +35,10 @@ let webpackConfig = {
         }
       },
       {
+        test: /\.css$/,
+        loaders: ['style-loader', 'css-loader']
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader'
       },
@@ -98,7 +102,7 @@ let webpackConfig = {
       '~': helpers.resolveProjectPath(),
       'vue$': 'vue/dist/vue.esm.js'
     }, config.alias),
-    extensions: ['.js', '.json', '.vue'],
+    extensions: ['.css', '.js', '.json', '.vue'],
     modules: [
       helpers.resolveLibraryPath('node_modules'),
       helpers.resolveProjectPath('node_modules')
@@ -122,10 +126,6 @@ lodash.forEach(config.html, entry => {
 
 if (lodash.intersection(config.plugins, ['coffee']).length > 0) {
   webpackConfig = require('./lib/plugins/coffee.js')(webpackConfig)
-}
-
-if (lodash.intersection(config.plugins, ['css']).length > 0) {
-  webpackConfig = require('./lib/plugins/css.js')(webpackConfig)
 }
 
 if (lodash.intersection(config.plugins, ['less']).length > 0) {

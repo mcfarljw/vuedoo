@@ -8,7 +8,7 @@ module.exports = {
     {filename: 'index.html', template: 'src/assets/index.pug'},
     {filename: 'cordova.html', template: 'src/assets/cordova.pug'}
   ],
-  plugins: ['css', 'pug', 'stylus'],
+  plugins: ['pug', 'stylus'],
   replace: [
     {search: '{!application-name!}', replace: project.name, flags: 'g'},
     {search: '{!application-version!}', replace: project.version, flags: 'g'}
