@@ -69,13 +69,13 @@
     "vuex-router-sync": "5.0.x",
     "webpack": "3.8.x",
     "webpack-dev-middleware": "1.12.x",
-    "webpack-hot-middleware": "2.20.x",
+    "webpack-hot-middleware": "2.21.x",
     "webpack-merge": "4.1.x"
   },
   "devDependencies": {
     "babel-eslint": "8.0.x",
     "cordova": "7.1.x",
-    "eslint": "4.11.x",
+    "eslint": "4.12.x",
     "eslint-config-standard": "10.2.x",
     "eslint-friendly-formatter": "3.0.x",
     "eslint-loader": "1.9.x",
