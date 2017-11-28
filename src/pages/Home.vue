@@ -10,15 +10,15 @@
 
 <template lang="pug">
   .home.page
-    h3 Vuedoo Documentation
-    h5 Version {{ config.applicationVersion }}
+    h1 Vuedoo Documentation
+    h3 Version {{ config.applicationVersion }}
     p Vue with a bit of dark magic.
     img.logo(src="../assets/logo.png", alt="")
 </template>
 
 <script>
   import config from '~/src/config'
-  import languages from '~data/languages'
+  import languages from '~/data/languages'
 
   export default {
     data () {

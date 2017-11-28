@@ -2,7 +2,7 @@ const project = require('./package.json')
 
 module.exports = {
   alias: {
-    '~data': 'res/data'
+    '~/data': 'res/data'
   },
   html: [
     {filename: 'index.html', template: 'src/assets/index.pug'},
