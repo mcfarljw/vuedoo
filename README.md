@@ -1,18 +1,12 @@
 # Vuedoo
 
-The goal of the project is to completely encapsulate the basic boilerplate required for creating even basic Vue project when using Webpack.
-
-## Quick Start
-
-```
-vue init mcfarljw/vuedoo-starter
-```
+The goal of the project is to encapsulate the boilerplate required for creating Vue projects with Webpack.
 
 ## Usage
 
 ### package.json
 
-```
+```json
 {
   "scripts": {
     "build": "vuedoo build",
@@ -21,14 +15,14 @@ vue init mcfarljw/vuedoo-starter
     "start": "vuedoo"
   },
   "dependencies": {
-    "vuedoo": "0.3.x"
+    "vuedoo": "latest"
   }
 }
 ```
 
 ### vuedoo.config.js
 
-```
+```javascript
 module.export = {
   alias: {},
   base: '/',
