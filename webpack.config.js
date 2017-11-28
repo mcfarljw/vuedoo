@@ -100,6 +100,7 @@ let webpackConfig = {
   resolve: {
     alias: helpers.mergeAlias({
       '~': helpers.resolveProjectPath(),
+      'vuedoo/utils': helpers.resolveLibraryPath('lib/utils'),
       'vue$': 'vue/dist/vue.esm.js'
     }, config.alias),
     extensions: ['.css', '.js', '.json', '.vue'],
