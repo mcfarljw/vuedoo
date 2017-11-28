@@ -64,7 +64,6 @@
     "vue-router": "3.0.x",
     "vue-style-loader": "3.0.x",
     "vue-template-compiler": "2.5.x",
-    "vuetify": "0.17.x",
     "vuex": "3.0.x",
     "vuex-router-sync": "5.0.x",
     "webpack": "3.8.x",
@@ -85,6 +84,7 @@
     "eslint-plugin-promise": "3.6.x",
     "eslint-plugin-standard": "3.0.x",
     "husky": "0.14.x",
-    "shelljs": "0.7.x"
+    "shelljs": "0.7.x",
+    "vuetify": "0.17.x"
   }
 }
