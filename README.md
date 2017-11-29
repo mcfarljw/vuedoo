@@ -15,6 +15,7 @@ The goal of the project is to encapsulate the boilerplate required for creating 
     "start": "vuedoo"
   },
   "dependencies": {
+    "vue": "2.x",
     "vuedoo": "latest"
   }
 }
