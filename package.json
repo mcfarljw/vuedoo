@@ -59,13 +59,9 @@
     "stylus": "0.54.x",
     "stylus-loader": "3.0.x",
     "url-loader": "0.6.x",
-    "vue": "2.5.x",
     "vue-loader": "13.5.x",
-    "vue-router": "3.0.x",
     "vue-style-loader": "3.0.x",
     "vue-template-compiler": "2.5.x",
-    "vuex": "3.0.x",
-    "vuex-router-sync": "5.0.x",
     "webpack": "3.8.x",
     "webpack-dev-middleware": "1.12.x",
     "webpack-hot-middleware": "2.21.x",
@@ -85,6 +81,13 @@
     "eslint-plugin-standard": "3.0.x",
     "husky": "0.14.x",
     "shelljs": "0.7.x",
-    "vuetify": "0.17.x"
+    "vue": "2.5.x",
+    "vue-router": "3.0.x",
+    "vuetify": "0.17.x",
+    "vuex": "3.0.x",
+    "vuex-router-sync": "5.0.x"
+  },
+  "peerDependencies": {
+    "vue": "2.x"
   }
 }

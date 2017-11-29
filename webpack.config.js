@@ -22,6 +22,10 @@ let webpackConfig = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        loaders: ['style-loader', 'css-loader']
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
@@ -33,10 +37,6 @@ let webpackConfig = {
         query: {
           multiple: config.replace
         }
-      },
-      {
-        test: /\.css$/,
-        loaders: ['style-loader', 'css-loader']
       },
       {
         test: /\.vue$/,
