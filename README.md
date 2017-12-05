@@ -1,6 +1,6 @@
 # Vuedoo
 
-The goal of the project is to encapsulate the boilerplate required for creating Vue projects with Webpack.
+The goal of the project is to encapsulate the boilerplate code required for creating modern javascript applications with Webpack.
 
 ## Usage
 
