@@ -9,7 +9,7 @@
 </style>
 
 <template lang="pug">
-  .home.page
+  .dashboard.page
     h1 Vuedoo Documentation
     h3 Version {{ config.applicationVersion }}
     p Vue with a bit of dark magic.
@@ -25,7 +25,7 @@
       return { config, languages }
     },
     mounted () {
-      document.title = 'Home | Vuedoo'
+      document.title = 'Dashboard | Vuedoo'
     }
   }
 </script>
