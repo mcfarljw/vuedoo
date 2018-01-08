@@ -30,6 +30,7 @@
   "dependencies": {
     "babel-core": "6.26.x",
     "babel-loader": "7.1.x",
+    "babel-polyfill": "6.26.x",
     "babel-preset-vue-app": "2.0.x",
     "chalk": "2.3.x",
     "coffee-loader": "0.9.x",
@@ -68,9 +69,9 @@
     "webpack-merge": "4.1.x"
   },
   "devDependencies": {
-    "babel-eslint": "8.0.x",
+    "babel-eslint": "8.1.x",
     "cordova": "8.0.x",
-    "eslint": "4.13.x",
+    "eslint": "4.15.x",
     "eslint-config-standard": "10.2.x",
     "eslint-friendly-formatter": "3.0.x",
     "eslint-loader": "1.9.x",

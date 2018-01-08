@@ -10,7 +10,7 @@ const helpers = require('./lib/helpers.js')
 
 let webpackConfig = {
   entry: {
-    main: helpers.resolveProjectPath(config.entry)
+    main: ['babel-polyfill', helpers.resolveProjectPath(config.entry)]
   },
 
   output: {
