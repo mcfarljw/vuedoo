@@ -17,15 +17,29 @@
 </template>
 
 <script>
-  import config from '~/src/config'
   import languages from '~/data/languages'
+  import config from '~/src/config'
+  import TestWorker from '~/src/workers/test.worker.js'
 
   export default {
+    mounted () {
+      document.title = 'Dashboard | Vuedoo'
+
+      this.spawnWorker()
+    },
     data () {
       return { config, languages }
     },
-    mounted () {
-      document.title = 'Dashboard | Vuedoo'
+    methods: {
+      spawnWorker () {
+        const worker = new TestWorker()
+
+        worker.onmessage = function (result) {
+          console.log(result.data)
+        }
+
+        worker.postMessage('hello world')
+      }
     }
   }
 </script>

@@ -60,16 +60,17 @@
     "stylus": "0.54.x",
     "stylus-loader": "3.0.x",
     "url-loader": "0.6.x",
-    "vue-loader": "13.6.x",
+    "vue-loader": "13.7.x",
     "vue-style-loader": "3.0.x",
     "vue-template-compiler": "2.5.x",
     "webpack": "3.10.x",
     "webpack-dev-middleware": "2.0.x",
     "webpack-hot-middleware": "2.21.x",
-    "webpack-merge": "4.1.x"
+    "webpack-merge": "4.1.x",
+    "worker-loader": "1.1.x"
   },
   "devDependencies": {
-    "babel-eslint": "8.1.x",
+    "babel-eslint": "8.2.x",
     "cordova": "8.0.x",
     "eslint": "4.15.x",
     "eslint-config-standard": "10.2.x",
@@ -81,10 +82,10 @@
     "eslint-plugin-promise": "3.6.x",
     "eslint-plugin-standard": "3.0.x",
     "husky": "0.14.x",
-    "shelljs": "0.7.x",
+    "shelljs": "0.8.x",
     "vue": "2.5.x",
     "vue-router": "3.0.x",
-    "vuetify": "0.17.x",
+    "vuetify": "1.0.0-beta.4",
     "vuex": "3.0.x",
     "vuex-router-sync": "5.0.x"
   }

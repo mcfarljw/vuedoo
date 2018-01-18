@@ -43,6 +43,10 @@ let webpackConfig = {
         loader: 'vue-loader'
       },
       {
+        test: /\.worker\.js$/,
+        loader: 'worker-loader'
+      },
+      {
         test: /\.(mp3|ogg|webm)$/,
         loader: 'file-loader',
         exclude: /node_modules/,
