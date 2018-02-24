@@ -67,6 +67,10 @@ let webpackConfig = {
         options: {
           name: 'fonts/[name].[hash:7].[ext]'
         }
+      },
+      {
+        test: [/\.(frag|vert?)$/],
+        loader: 'raw-loader'
       }
     ]
   },
@@ -123,11 +127,17 @@ let webpackConfig = {
 }
 
 lodash.forEach(config.html, entry => {
-  webpackConfig.plugins.push(new HtmlWebpackPlugin({
-    filename: entry.filename,
-    template: helpers.resolveProjectPath(entry.template)
-  }))
+  webpackConfig.plugins.push(
+    new HtmlWebpackPlugin({
+      filename: entry.filename,
+      template: helpers.resolveProjectPath(entry.template)
+    })
+  )
 })
+
+if (config.define) {
+  webpackConfig.plugins.push(new webpack.DefinePlugin(config.define))
+}
 
 if (lodash.intersection(config.plugins, ['coffee']).length > 0) {
   webpackConfig = require('./lib/plugins/coffee.js')(webpackConfig)

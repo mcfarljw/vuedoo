@@ -4,6 +4,10 @@ module.exports = {
   alias: {
     '~/data': 'res/data'
   },
+  define: {
+    CANVAS_RENDERER: true,
+    WEBGL_RENDERER: true
+  },
   html: [
     {filename: 'index.html', template: 'src/assets/index.pug'},
     {filename: 'cordova.html', template: 'src/assets/cordova.pug'}
