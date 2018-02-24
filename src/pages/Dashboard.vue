@@ -35,10 +35,10 @@
         const worker = new TestWorker()
 
         worker.onmessage = function (result) {
-          console.log(result.data)
+          console.log('worker status:', result.data)
         }
 
-        worker.postMessage('hello world')
+        worker.postMessage('success')
       }
     }
   }
