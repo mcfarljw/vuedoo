@@ -4,24 +4,22 @@ const webpackConfig = require('./webpack.config')
 const config = require('./lib/config')
 
 module.exports = webpackMerge(webpackConfig, {
-  devtool: '#source-map',
+  devtool: config.sourcemap ? '#source-map' : false,
   output: {
     filename: '[name].[chunkhash].js'
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"production"'
+        NODE_ENV: JSON.stringify('production')
       }
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
     }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: !config.cordova,
-      compress: {
-        warnings: false
-      }
+      parallel: true,
+      sourceMap: !config.cordova && config.sourcemap
     })
   ]
 })
