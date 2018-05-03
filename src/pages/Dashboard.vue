@@ -1,11 +1,11 @@
 <style lang="stylus" scoped>
   .page
-    padding-top: 10%
-    text-align: center
+    padding-top 10%
+    text-align center
 
   .logo
-    max-width: 300px
-    width: 100%
+    max-width 300px
+    width 100%
 </style>
 
 <template lang="pug">
