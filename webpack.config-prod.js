@@ -19,7 +19,7 @@ module.exports = webpackMerge(webpackConfig, {
     }),
     new webpack.optimize.UglifyJsPlugin({
       parallel: true,
-      sourceMap: !config.cordova && config.sourcemap
+      sourceMap: config.sourcemap
     })
   ]
 })
