@@ -68,7 +68,7 @@
     "webpack-dev-middleware": "2.0.x",
     "webpack-hot-middleware": "2.22.x",
     "webpack-merge": "4.1.x",
-    "worker-loader": "1.1.x"
+    "worker-loader": "2.0.x"
   },
   "devDependencies": {
     "babel-eslint": "8.2.x",
