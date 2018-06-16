@@ -19,7 +19,7 @@
 <script>
   import languages from '~/data/languages'
   import config from '~/src/config'
-  import TestWorker from '~/src/workers/test.worker.js'
+  import TestWorker from '~/src/workers/TestWorker.js'
 
   export default {
     mounted () {

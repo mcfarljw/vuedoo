@@ -46,7 +46,8 @@ let webpackConfig = {
         loader: 'vue-loader'
       },
       {
-        test: /\.worker\.js$/,
+        test: /\.js$/,
+        include: /workers/,
         loader: 'worker-loader'
       },
       {
