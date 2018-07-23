@@ -13,7 +13,7 @@
     h1 Vuedoo Documentation
     h3 Version {{ config.applicationVersion }}
     p Vue with a bit of dark magic.
-    img.logo(src="../assets/logo.png", alt="")
+    img.logo(src="images/logo.png", alt="")
 </template>
 
 <script>

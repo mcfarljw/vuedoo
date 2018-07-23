@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarWebpackPlugin = require('progress-bar-webpack-plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 const config = require('./lib/config.js')
 const helpers = require('./lib/helpers.js')
 
@@ -23,7 +24,7 @@ let webpackConfig = {
     rules: [
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader']
+        loaders: ['vue-style-loader', 'css-loader']
       },
       {
         test: /\.js$/,
@@ -84,35 +85,26 @@ let webpackConfig = {
   },
 
   plugins: [
-    new webpack.NamedModulesPlugin(),
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'vendor',
-    //   minChunks: helpers.optimizeCommonChunks
-    // }),
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'manifest',
-    //   chunks: ['vendor']
-    // }),
+    new VueLoaderPlugin(),
     new CopyWebpackPlugin(lodash.map(config.static, entry => {
       if (entry.from) entry.from = helpers.resolveProjectPath(entry.from)
 
       return entry
     })),
-    new ProgressBarWebpackPlugin({
-      format: chalk.blue('Building') + ' [:percent :bar]',
-      summary: false
-    }),
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
         messages: ['URL: http://localhost:' + config.port]
       }
+    }),
+    new ProgressBarWebpackPlugin({
+      format: chalk.blue('Building') + ' [:percent :bar]',
+      summary: false
     })
   ],
 
   resolve: {
     alias: helpers.mergeAlias({
       '~': helpers.resolveProjectPath(),
-      'vuedoo/utils': helpers.resolveLibraryPath('lib/utils'),
       'vue$': 'vue/dist/vue.esm.js'
     }, config.alias),
     extensions: ['.css', '.js', '.json', '.vue'],
