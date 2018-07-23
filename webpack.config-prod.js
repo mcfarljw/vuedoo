@@ -5,6 +5,7 @@ const config = require('./lib/config')
 
 module.exports = webpackMerge(webpackConfig, {
   devtool: config.sourcemap ? '#source-map' : false,
+  mode: 'production',
   output: {
     filename: '[name].[chunkhash].js'
   },

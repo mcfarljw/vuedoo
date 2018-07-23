@@ -85,14 +85,14 @@ let webpackConfig = {
 
   plugins: [
     new webpack.NamedModulesPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: helpers.optimizeCommonChunks
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'manifest',
-      chunks: ['vendor']
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor',
+    //   minChunks: helpers.optimizeCommonChunks
+    // }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'manifest',
+    //   chunks: ['vendor']
+    // }),
     new CopyWebpackPlugin(lodash.map(config.static, entry => {
       if (entry.from) entry.from = helpers.resolveProjectPath(entry.from)
 
