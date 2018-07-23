@@ -64,8 +64,8 @@
     "vue-loader": "14.2.x",
     "vue-style-loader": "4.1.x",
     "vue-template-compiler": "2.5.x",
-    "webpack": "3.11.x",
-    "webpack-dev-middleware": "2.0.x",
+    "webpack": "4.16.x",
+    "webpack-dev-middleware": "3.1.x",
     "webpack-hot-middleware": "2.22.x",
     "webpack-merge": "4.1.x",
     "worker-loader": "2.0.x"
@@ -83,7 +83,6 @@
     "eslint-plugin-promise": "3.8.x",
     "eslint-plugin-standard": "3.1.x",
     "husky": "0.14.x",
-    "phaser": "3.x.x",
     "shelljs": "0.8.x",
     "vue": "2.5.x",
     "vue-router": "3.0.x",
