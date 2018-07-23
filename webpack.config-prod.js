@@ -5,6 +5,10 @@ const config = require('./lib/config')
 
 module.exports = webpackMerge(webpackConfig, {
   devtool: config.sourcemap ? '#source-map' : false,
+  mode: 'production',
+  optimization: {
+    minimize: true
+  },
   output: {
     filename: '[name].[chunkhash].js'
   },
@@ -16,10 +20,6 @@ module.exports = webpackMerge(webpackConfig, {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      parallel: true,
-      sourceMap: config.sourcemap
     })
   ]
 })

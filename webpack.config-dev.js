@@ -9,6 +9,10 @@ Object.keys(webpackConfig.entry).forEach(name => {
 
 module.exports = webpackMerge(webpackConfig, {
   devtool: '#cheap-module-eval-source-map',
+  mode: 'development',
+  optimization: {
+    minimize: false
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
