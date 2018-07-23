@@ -1,5 +1,4 @@
 import 'vuetify/dist/vuetify.min.css'
-import Phaser from 'phaser'
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import VuexRouterSync from 'vuex-router-sync'
@@ -13,14 +12,12 @@ Vue.use(Vuetify)
 VuexRouterSync.sync(store, router)
 
 function start () {
-  const app = new Vue({
+  window.app = new Vue({
+    el: '#app',
     render: h => h(App),
     router,
     store
   })
-
-  window.app = app.$mount('#app')
-  window.game = new Phaser.Game()
 }
 
 if (isCordova()) {
