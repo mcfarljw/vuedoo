@@ -21,6 +21,20 @@ let webpackConfig = {
     publicPath: config.cordova ? '' : config.base
   },
 
+  optimization: {
+    runtimeChunk: true,
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          chunks: 'initial',
+          name: 'vendor',
+          test: /node_modules/,
+          enforce: true
+        }
+      }
+    }
+  },
+
   module: {
     rules: [
       {
