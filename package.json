@@ -60,6 +60,7 @@
     "string-replace-loader": "2.1.x",
     "stylus": "0.54.x",
     "stylus-loader": "3.0.x",
+    "uglifyjs-webpack-plugin": "1.2.x",
     "url-loader": "1.0.x",
     "vue-loader": "15.2.x",
     "vue-style-loader": "4.1.x",

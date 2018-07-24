@@ -1,3 +1,4 @@
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const webpack = require('webpack')
 const webpackMerge = require('webpack-merge')
 const webpackConfig = require('./webpack.config')
@@ -11,7 +12,13 @@ module.exports = webpackMerge(webpackConfig, {
   devtool: '#cheap-module-eval-source-map',
   mode: 'development',
   optimization: {
-    minimize: false
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      })
+    ]
   },
   plugins: [
     new webpack.DefinePlugin({
