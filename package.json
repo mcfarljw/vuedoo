@@ -50,7 +50,7 @@
     "less-loader": "4.1.x",
     "lodash": "4.17.x",
     "minimist": "1.2.x",
-    "node-sass": "4.9.x",
+    "node-sass": "4.12.x",
     "progress-bar-webpack-plugin": "1.11.x",
     "pug": "2.0.x",
     "pug-loader": "2.4.x",
