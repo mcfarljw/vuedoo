@@ -52,7 +52,7 @@
     "minimist": "^1.2.6",
     "node-sass": "4.12.x",
     "progress-bar-webpack-plugin": "1.11.x",
-    "pug": "2.0.x",
+    "pug": "3.0.x",
     "pug-loader": "2.4.x",
     "pug-plain-loader": "1.0.x",
     "raw-loader": "0.5.x",
