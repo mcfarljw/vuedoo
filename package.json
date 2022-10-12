@@ -73,7 +73,7 @@
   },
   "devDependencies": {
     "babel-eslint": "8.2.x",
-    "cordova": "8.0.x",
+    "cordova": "11.0.x",
     "eslint": "5.3.x",
     "eslint-config-standard": "11.0.x",
     "eslint-friendly-formatter": "4.0.x",
